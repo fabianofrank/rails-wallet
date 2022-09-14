@@ -1,5 +1,6 @@
 class Investment < ApplicationRecord
   belongs_to :user
+
   has_and_belongs_to_many :group
 
   validates :name, presence: true, length: { in: 2..25 }
