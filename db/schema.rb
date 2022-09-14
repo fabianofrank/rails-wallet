@@ -23,13 +23,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_163247) do
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
-  create_table "groups_operations", force: :cascade do |t|
+  create_table "groups_investments", force: :cascade do |t|
     t.bigint "group_id", null: false
     t.bigint "investment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_groups_operations_on_group_id"
-    t.index ["investment_id"], name: "index_groups_operations_on_investment_id"
+    t.index ["group_id"], name: "index_groups_investments_on_group_id"
+    t.index ["investment_id"], name: "index_groups_investments_on_investment_id"
   end
 
   create_table "investments", force: :cascade do |t|
@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_163247) do
   end
 
   add_foreign_key "groups", "users"
-  add_foreign_key "groups_operations", "groups"
-  add_foreign_key "groups_operations", "investments"
+  add_foreign_key "groups_investments", "groups"
+  add_foreign_key "groups_investments", "investments"
   add_foreign_key "investments", "users"
 end

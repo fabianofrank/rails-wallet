@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="flex-horizontal">
+    <h2>Transaction Nº00<%= rand(200...500)%><%= investment.id %></h2>
+    <p><%= investment.name %>: <%= investment.created_at.strftime("%d %b %y at %l:%M %p")%></p>
+  <div>
+</div>
+
+<div class="card">
+  <h2>TOTAL INVESTMENT</h2>
+  <div class="inv-field">
+    <%= investment.amount %>
+  </div>
+</div>

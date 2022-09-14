@@ -1,0 +1,8 @@
+<div>
+  <h1>Wallets</h1>
+  <%= @amount %>
+</div>
+
+<%= render @groups %>
+
+<%= button_to "New Wallet", new_group_path, method: :get, data: {turbo: false} %>
