@@ -3,10 +3,9 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups.order(id: :desc)
+    @group = current_user.groups.first
     @amount = Investment.where(user_id: current_user.id).sum(:amount)
   end
-
-  def show; end
 
   def new
     @group = current_user.groups.new

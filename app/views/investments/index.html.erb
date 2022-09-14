@@ -1,2 +1,11 @@
 <%= render 'groups/group', group: @group %>
 <%= render @investments %>
+
+<div class="card">
+  <h2>TOTAL INVESTMENT</h2>
+  <div class="inv-field">
+    <%= @group.investment.sum(:amount) %>
+  </div>
+</div>
+
+<%= button_to "New Investment", new_group_investment_path(@group.id), method: :get, data: {turbo: false} %>

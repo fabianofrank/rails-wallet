@@ -1,0 +1,15 @@
+<%= form_with(model: @investment, url: group_investments_path, method: :post) do |form| %>
+  <div class="card">
+    <div class= "flex-horizontal">
+      <div class="flex-vertical">
+        <%= form.text_field :name, placeholder: "Name", required: true %>
+      </div>
+      <%= form.number_field :amount, placeholder: "0.0", required: true %>
+    </div>
+
+
+    <div class="inv-field">
+      <%= form.submit "Save", class: 'add-btn' %>
+    </div>
+  </div>
+<%end%>
