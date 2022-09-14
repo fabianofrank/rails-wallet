@@ -8,6 +8,6 @@
 <div class="card">
   <h2>TOTAL INVESTMENT</h2>
   <div class="inv-field">
-    <%= investment.amount %>
+    <%= @group.investment.sum(:amount) %>
   </div>
 </div>
