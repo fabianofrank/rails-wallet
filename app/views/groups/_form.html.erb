@@ -1,5 +1,5 @@
 <%= form_with(model: @group) do |form| %>
-  <div class="group">
+  <div class="card">
     <div class= "flex-horizontal">
         <%= form.select :icon, @icons.map { |i| [i.to_s, i.to_s] }, {} %>
       <div class="flex-vertical">

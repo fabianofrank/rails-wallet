@@ -1,14 +1,17 @@
-<div class="group">
-  <div class= "flex-horizontal">
-    <%= group.icon %>
-    <div class="flex-vertical">
-      <%= group.name %>
-      <%= group.created_at.strftime("%d %B %Y") %>
+<%= link_to group_investments_path(group.id) do %>
+  <div class="card">
+    
+    <div class= "flex-horizontal">
+      <%= group.icon %>
+      <div class="flex-vertical">
+        <%= group.name %>
+        <%= group.created_at.strftime("%d %B %Y") %>
+      </div>
     </div>
-  </div>
+    
+    <div class="inv-field">
+      <%= group.investment.sum(:amount) %>
+    </div>
 
-
-  <div class="inv-field">
-    <%= group.investment.sum(:amount) %>
   </div>
-</div>
+<%end%>
