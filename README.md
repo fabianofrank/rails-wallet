@@ -3,12 +3,12 @@
 My Wallet is meant to help you organize your investments across different categories. This fully functional website shows you a list of all your wallets and the total value on them, it also displays the total amount of investments separated by wallet. It can be used by different users within the local database that was design for this application.
 
 
-Here it is the main screen of the application:
+- Here it is the main screen and the live link for of the application:
 
 </br>
  <div align="center">
-    <img alt="gif" src="./public/wallet.png" width=50% />
-    <p>My Wallet</p>
+    <p>[Live Link](https://git.heroku.com/rails-wallet.git)</p>
+    <img alt="gif" src="./public/wallet.png" width=80% />
 </div>
 
 ## Getting Started
@@ -66,7 +66,6 @@ $ rails db:seed
 
  - Ruby on RAils  <img src="https://cdn.emojidex.com/emoji/seal/Ruby.png" width=15px>
  - PostgreSQL <img src="https://user-images.githubusercontent.com/80895497/142954032-f7072df9-3586-48f9-a9e0-7fdd284eb833.png" width=15px>
-</br>
 
 ## Author
 
@@ -74,7 +73,7 @@ $ rails db:seed
 
 - GitHub: [@fabianofrank](https://github.com/fabianofrank)
 - Twitter: [@fabianofrankk](https://twitter.com/fabianofrankk)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/fabianofrank/)
+- LinkedIn: [@fabianofrank](https://www.linkedin.com/in/fabianofrank/)
 
 ## 🤝 Contributing
 
