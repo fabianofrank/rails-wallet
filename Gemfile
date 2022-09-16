@@ -22,8 +22,12 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 group :development, :test do
   gem 'bullet'
+  gem 'capybara'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
   gem 'rswag-specs'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -32,9 +36,5 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
