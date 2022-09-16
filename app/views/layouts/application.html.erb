@@ -11,20 +11,72 @@
   </head>
 
   <body>
-    <% unless current_page?(group_investments_path(@group.id))%>
-      <div class='navbar'>
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete, data:{turbo:false} %>
+    <% unless current_page?(root_path) %>
+      <div class="nav-bar">
+
+        <% unless (current_page?(groups_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) || current_page?(new_user_session_path) || current_page?(new_user_password_path)) || current_page?(edit_user_password_path) || current_page?(new_group_investment_path(@group.id)) %>
+          <button type="submit", class="save">
+            <%= link_to '<', groups_path, data:{turbo:false} %>
+          </button>
+        <% end %>
+
+        <% if current_page?(new_user_registration_path) %>
+          <button type="submit", class="save">
+            <%= link_to '<', root_path, data:{turbo:false} %>
+          </button>
+          <h2>SIGN UP</h2>
+          <div></div>
+          
+        <% elsif current_page?(new_user_session_path) %>
+          <button type="submit", class="save">
+            <%= link_to '<', root_path, data:{turbo:false} %>
+          </button>
+          <h2>LOG IN</h2>
+          <div></div>
+
+        <% elsif current_page?(edit_user_password_path) %>
+          <button type="submit", class="save">
+            <%= link_to '<', root_path, data:{turbo:false} %>
+          </button>
+          <h2>EDIT PASSWORD</h2>
+          <div></div>
+
+        <% elsif current_page?(new_user_password_path) %>
+          <button type="submit", class="save">
+            <%= link_to '<', new_user_session_path, data:{turbo:false} %>
+          </button>
+          <h2>RESET PASSWORD</h2>
+          <div></div>
+
+          <% elsif current_page?(new_group_investment_path(@group.id)) %>
+            <% if user_signed_in? %>
+              <button type="submit", class="save" >
+                <%= link_to '<', group_investments_path(@group.id), data:{turbo:false} %>
+              </button>
+              <h2>NEW INVESTMENTS</h2>
+            <%end%>
+        <% end %>
+        
+        <% if user_signed_in? %>
+          <% if current_page?(groups_path) %>
+            <%= image_tag("menu.png", :alt => "menu button", :class => 'menu')%>
+            <h2>WALLET</h2>
+          <% elsif current_page?(new_group_path)%>
+            <h2>NEW WALLET</h2>
+          <% elsif current_page?(group_investments_path(@group.id)) %>
+            <h2>INVESTMENTS</h2>
+          <% end %>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data:{turbo:false}, class: 'save' %>
+        <% end %>
       </div>
-    <%else%>
-      <div class='navbar'>
-        <button type="submit">
-          <%= link_to '<', groups_path %>
-        </button>
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete, data:{turbo:false} %>
-      </div>
-    <%end%>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>

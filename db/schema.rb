@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_163247) do
 
   create_table "investments", force: :cascade do |t|
     t.string "name"
-    t.float "amount", default: 0.0
+    t.float "amount"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

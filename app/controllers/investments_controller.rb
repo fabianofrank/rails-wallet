@@ -5,6 +5,7 @@ class InvestmentsController < ApplicationController
   end
 
   def new
+    @group = Group.find(params[:group_id])
     @investment = current_user.investments.new
   end
 
