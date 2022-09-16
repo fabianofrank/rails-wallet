@@ -24,6 +24,10 @@ group :development, :test do
   gem 'bullet'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rswag-specs'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -32,9 +36,5 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
