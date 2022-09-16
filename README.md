@@ -6,8 +6,9 @@ My Wallet is meant to help you organize your investments across different catego
 - Here it is the main screen and the live link for of the application:
 
 </br>
+
+[Live Link](https://git.heroku.com/rails-wallet.git)
  <div align="center">
-    <p>[Live Link](https://git.heroku.com/rails-wallet.git)</p>
     <img alt="gif" src="./public/wallet.png" width=80% />
 </div>
 
