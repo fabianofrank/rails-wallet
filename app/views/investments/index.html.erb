@@ -1,11 +1,20 @@
 <%= render 'groups/group', group: @group %>
-<%= render @investments %>
 
-<div class="card">
-  <h2>TOTAL INVESTMENT</h2>
-  <div class="inv-field">
-    <%= @group.investment.sum(:amount) %>
+<div class="top-cards">
+  
+  <%= render @investments %>
+
+  <div>
+    <div class= "icon-wrapper">
+      <h4>TOTAL INVESTMENT</h4>
+      <div class="money-field">
+        <h4>$<%= @group.investment.sum(:amount) %></h4>
+      </div>
+    </div>
   </div>
+
 </div>
 
-<%= button_to "New Investment", new_group_investment_path(@group.id), method: :get, data: {turbo: false} %>
+<div class='footer-cards top-cards'>
+    <%= button_to "New Investment", new_group_investment_path(@group.id), method: :get, data: {turbo: false}, :class => "login green-button" %>
+  </div>

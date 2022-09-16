@@ -3,13 +3,14 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups.order(id: :desc)
-    @group = current_user.groups.first
     @amount = Investment.where(user_id: current_user.id).sum(:amount)
+    @group = current_user.groups.first # Fix for missing group_id at the Navbar conditionals
   end
 
   def new
-    @group = current_user.groups.new
+    @new_group = current_user.groups.new
     @icons = ['⚽', '🎮', '🚗', '🚢', '🚌', '🚊', '💈', '🏥', '🏭', '🏖️', '🍽️', '🥂', '🤖']
+    @group = current_user.groups.first # Fix for missing group_id at the Navbar conditionals
   end
 
   def create
