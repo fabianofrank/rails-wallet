@@ -7,10 +7,11 @@ My Wallet is meant to help you organize your investments across different catego
 
 </br>
 
-[Live Link](https://rails-wallet.herokuapp.com/)
- <div align="center">
-    <img alt="gif" src="./public/wallet.png" width=80% />
-</div>
+![wallet1_mock](https://user-images.githubusercontent.com/68971295/196289400-d5bb6fc1-4f7b-42e3-89ac-463df77f18b9.png)
+![wallet2_mock](https://user-images.githubusercontent.com/68971295/196289435-7019cc08-a850-4259-9c70-45bc2c83b808.png)
+![wallet3_mock](https://user-images.githubusercontent.com/68971295/196289446-1d4f07fa-441c-49fc-9f1f-1a94f47bb2e9.png)
+
+### [Demo](https://rails-wallet.herokuapp.com/)
 
 ## Getting Started
 To run the project locally, copy up and running follow these simple example steps :
