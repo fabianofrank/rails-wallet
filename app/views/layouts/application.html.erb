@@ -14,7 +14,7 @@
     <% unless current_page?(root_path) %>
       <div class="nav-bar">
 
-        <% unless (current_page?(groups_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) || current_page?(new_user_session_path) || current_page?(new_user_password_path)) || current_page?(edit_user_password_path) || current_page?(new_group_investment_path(@group.id)) %>
+        <% unless (current_page?(groups_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) || current_page?(new_user_session_path) || current_page?(new_user_password_path)) || current_page?(edit_user_password_path) %>
           <button type="submit", class="save">
             <%= link_to '<', groups_path, data:{turbo:false} %>
           </button>
@@ -49,12 +49,6 @@
           <div></div>
 
           <% elsif current_page?(new_group_investment_path(@group.id)) %>
-            <% if user_signed_in? %>
-              <button type="submit", class="save" >
-                <%= link_to '<', group_investments_path(@group.id), data:{turbo:false} %>
-              </button>
-              <h2>NEW INVESTMENTS</h2>
-            <%end%>
         <% end %>
         
         <% if user_signed_in? %>
