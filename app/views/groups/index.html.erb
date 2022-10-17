@@ -1,0 +1,14 @@
+<div>
+  <div class="flex-horizontal wallet-total">
+    <h4>Total</h4>
+    <h4>$<%= @amount %></h4>
+  </div>
+
+  <div class="top-cards">
+    <%= render @groups %>
+  </div>
+
+  <div class='footer-cards top-cards'>
+    <%= button_to "New Wallet", new_group_path, method: :get, data: {turbo: false}, :class => "login green-button" %>
+  </div>
+</div>

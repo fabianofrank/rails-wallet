@@ -1,0 +1,37 @@
+
+<% unless current_page?(group_investments_path(group.id))%>
+  <%= link_to group_investments_path(group.id) do %>
+    <div class="icon-wrapper">
+      
+      <div class= "icon-container">
+        <div class="icon">
+          <%= group.icon %>
+        </div>
+        <div class="flex-vertical margin-left">
+          <h4><%= group.name %><h4>
+          <p><%= group.created_at.strftime("%d %B %Y") %></p>
+        </div>
+      </div>
+      
+      <div class="money-field">
+        <h4>$<%= group.investment.sum(:amount) %></h4>
+      </div>
+
+    </div>
+  <%end%>
+<%else%>
+  <div class="icon-wrapper">
+  <div class="icon-container">
+      <div class="icon">
+        <%= group.icon %>
+      </div>
+
+      <div class="flex-vertical margin-left-bio">
+        <h4><%= group.name %><h4>
+        <div class="lorem">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>
